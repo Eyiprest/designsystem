@@ -1,0 +1,450 @@
+[
+  {
+    "name": "color/bg/canvas",
+    "type": "COLOR",
+    "value": "#FBFAF7",
+    "cssVar": "--steady-color-bg-canvas",
+    "description": "Page background"
+  },
+  {
+    "name": "color/bg/surface",
+    "type": "COLOR",
+    "value": "#FFFFFF",
+    "cssVar": "--steady-color-bg-surface",
+    "description": "Inputs, dialogs, table body"
+  },
+  {
+    "name": "color/bg/subtle",
+    "type": "COLOR",
+    "value": "#F1EFE8",
+    "cssVar": "--steady-color-bg-subtle",
+    "description": "Table header, hover rows, code"
+  },
+  {
+    "name": "color/bg/inverse",
+    "type": "COLOR",
+    "value": "#1D1C19",
+    "cssVar": "--steady-color-bg-inverse",
+    "description": "Toast background"
+  },
+  {
+    "name": "color/text/primary",
+    "type": "COLOR",
+    "value": "#1D1C19",
+    "cssVar": "--steady-color-text-primary",
+    "description": ""
+  },
+  {
+    "name": "color/text/secondary",
+    "type": "COLOR",
+    "value": "#57544C",
+    "cssVar": "--steady-color-text-secondary",
+    "description": ""
+  },
+  {
+    "name": "color/text/on-primary",
+    "type": "COLOR",
+    "value": "#FFFFFF",
+    "cssVar": "--steady-color-text-on-primary",
+    "description": ""
+  },
+  {
+    "name": "color/text/on-inverse",
+    "type": "COLOR",
+    "value": "#FBFAF7",
+    "cssVar": "--steady-color-text-on-inverse",
+    "description": ""
+  },
+  {
+    "name": "color/text/disabled",
+    "type": "COLOR",
+    "value": "#7B776C",
+    "cssVar": "--steady-color-text-disabled",
+    "description": "Inactive component text. Exempt from WCAG 1.4.3, documented anyway."
+  },
+  {
+    "name": "color/border/default",
+    "type": "COLOR",
+    "value": "#7D796D",
+    "cssVar": "--steady-color-border-default",
+    "description": "Control boundaries. Must reach 3:1 (WCAG 1.4.11)."
+  },
+  {
+    "name": "color/border/subtle",
+    "type": "COLOR",
+    "value": "#DAD6CB",
+    "cssVar": "--steady-color-border-subtle",
+    "description": "Dividers only. Never the sole boundary of a control."
+  },
+  {
+    "name": "color/border/disabled",
+    "type": "COLOR",
+    "value": "#C4C0B4",
+    "cssVar": "--steady-color-border-disabled",
+    "description": ""
+  },
+  {
+    "name": "color/primary/default",
+    "type": "COLOR",
+    "value": "#0B6B70",
+    "cssVar": "--steady-color-primary-default",
+    "description": ""
+  },
+  {
+    "name": "color/primary/hover",
+    "type": "COLOR",
+    "value": "#08555A",
+    "cssVar": "--steady-color-primary-hover",
+    "description": ""
+  },
+  {
+    "name": "color/primary/active",
+    "type": "COLOR",
+    "value": "#064044",
+    "cssVar": "--steady-color-primary-active",
+    "description": ""
+  },
+  {
+    "name": "color/primary/subtle",
+    "type": "COLOR",
+    "value": "#E1F0F0",
+    "cssVar": "--steady-color-primary-subtle",
+    "description": ""
+  },
+  {
+    "name": "color/focus/inner",
+    "type": "COLOR",
+    "value": "#FFFFFF",
+    "cssVar": "--steady-color-focus-inner",
+    "description": "Gap colour between element and ring"
+  },
+  {
+    "name": "color/focus/outer",
+    "type": "COLOR",
+    "value": "#1D1C19",
+    "cssVar": "--steady-color-focus-outer",
+    "description": "Visible ring"
+  },
+  {
+    "name": "color/disabled/bg",
+    "type": "COLOR",
+    "value": "#EEECE6",
+    "cssVar": "--steady-color-disabled-bg",
+    "description": ""
+  },
+  {
+    "name": "color/error/default",
+    "type": "COLOR",
+    "value": "#B3261E",
+    "cssVar": "--steady-color-error-default",
+    "description": "Text, borders and icons on canvas or surface"
+  },
+  {
+    "name": "color/error/subtle",
+    "type": "COLOR",
+    "value": "#FCE9E7",
+    "cssVar": "--steady-color-error-subtle",
+    "description": ""
+  },
+  {
+    "name": "color/success/default",
+    "type": "COLOR",
+    "value": "#1E6B34",
+    "cssVar": "--steady-color-success-default",
+    "description": ""
+  },
+  {
+    "name": "color/success/subtle",
+    "type": "COLOR",
+    "value": "#E5F2E8",
+    "cssVar": "--steady-color-success-subtle",
+    "description": ""
+  },
+  {
+    "name": "color/warning/default",
+    "type": "COLOR",
+    "value": "#7A4800",
+    "cssVar": "--steady-color-warning-default",
+    "description": ""
+  },
+  {
+    "name": "color/warning/subtle",
+    "type": "COLOR",
+    "value": "#FFF1CF",
+    "cssVar": "--steady-color-warning-subtle",
+    "description": ""
+  },
+  {
+    "name": "font/family/sans",
+    "type": "STRING",
+    "value": "'Atkinson Hyperlegible Next Variable', 'Atkinson Hyperlegible Next', system-ui, sans-serif",
+    "cssVar": "--steady-font-family-sans",
+    "description": ""
+  },
+  {
+    "name": "font/family/mono",
+    "type": "STRING",
+    "value": "'Atkinson Hyperlegible Mono', ui-monospace, monospace",
+    "cssVar": "--steady-font-family-mono",
+    "description": ""
+  },
+  {
+    "name": "font/size/xs",
+    "type": "FLOAT",
+    "value": 12,
+    "cssVar": "--steady-font-size-xs",
+    "description": ""
+  },
+  {
+    "name": "font/size/sm",
+    "type": "FLOAT",
+    "value": 14,
+    "cssVar": "--steady-font-size-sm",
+    "description": ""
+  },
+  {
+    "name": "font/size/md",
+    "type": "FLOAT",
+    "value": 16,
+    "cssVar": "--steady-font-size-md",
+    "description": ""
+  },
+  {
+    "name": "font/size/lg",
+    "type": "FLOAT",
+    "value": 20,
+    "cssVar": "--steady-font-size-lg",
+    "description": ""
+  },
+  {
+    "name": "font/size/xl",
+    "type": "FLOAT",
+    "value": 24,
+    "cssVar": "--steady-font-size-xl",
+    "description": ""
+  },
+  {
+    "name": "font/size/2xl",
+    "type": "FLOAT",
+    "value": 32,
+    "cssVar": "--steady-font-size-2xl",
+    "description": ""
+  },
+  {
+    "name": "font/weight/regular",
+    "type": "FLOAT",
+    "value": 400,
+    "cssVar": "--steady-font-weight-regular",
+    "description": ""
+  },
+  {
+    "name": "font/weight/medium",
+    "type": "FLOAT",
+    "value": 500,
+    "cssVar": "--steady-font-weight-medium",
+    "description": ""
+  },
+  {
+    "name": "font/weight/bold",
+    "type": "FLOAT",
+    "value": 700,
+    "cssVar": "--steady-font-weight-bold",
+    "description": ""
+  },
+  {
+    "name": "font/line-height/tight",
+    "type": "FLOAT",
+    "value": 1.25,
+    "cssVar": "--steady-font-line-height-tight",
+    "description": ""
+  },
+  {
+    "name": "font/line-height/normal",
+    "type": "FLOAT",
+    "value": 1.5,
+    "cssVar": "--steady-font-line-height-normal",
+    "description": ""
+  },
+  {
+    "name": "space/0",
+    "type": "FLOAT",
+    "value": 0,
+    "cssVar": "--steady-space-0",
+    "description": ""
+  },
+  {
+    "name": "space/1",
+    "type": "FLOAT",
+    "value": 2,
+    "cssVar": "--steady-space-1",
+    "description": ""
+  },
+  {
+    "name": "space/2",
+    "type": "FLOAT",
+    "value": 4,
+    "cssVar": "--steady-space-2",
+    "description": ""
+  },
+  {
+    "name": "space/3",
+    "type": "FLOAT",
+    "value": 8,
+    "cssVar": "--steady-space-3",
+    "description": ""
+  },
+  {
+    "name": "space/4",
+    "type": "FLOAT",
+    "value": 12,
+    "cssVar": "--steady-space-4",
+    "description": ""
+  },
+  {
+    "name": "space/5",
+    "type": "FLOAT",
+    "value": 16,
+    "cssVar": "--steady-space-5",
+    "description": ""
+  },
+  {
+    "name": "space/6",
+    "type": "FLOAT",
+    "value": 24,
+    "cssVar": "--steady-space-6",
+    "description": ""
+  },
+  {
+    "name": "space/7",
+    "type": "FLOAT",
+    "value": 32,
+    "cssVar": "--steady-space-7",
+    "description": ""
+  },
+  {
+    "name": "space/8",
+    "type": "FLOAT",
+    "value": 48,
+    "cssVar": "--steady-space-8",
+    "description": ""
+  },
+  {
+    "name": "space/9",
+    "type": "FLOAT",
+    "value": 64,
+    "cssVar": "--steady-space-9",
+    "description": ""
+  },
+  {
+    "name": "radius/none",
+    "type": "FLOAT",
+    "value": 0,
+    "cssVar": "--steady-radius-none",
+    "description": ""
+  },
+  {
+    "name": "radius/sm",
+    "type": "FLOAT",
+    "value": 2,
+    "cssVar": "--steady-radius-sm",
+    "description": "Checkbox, table cells"
+  },
+  {
+    "name": "radius/md",
+    "type": "FLOAT",
+    "value": 4,
+    "cssVar": "--steady-radius-md",
+    "description": "Buttons, inputs, selects, tabs"
+  },
+  {
+    "name": "radius/lg",
+    "type": "FLOAT",
+    "value": 8,
+    "cssVar": "--steady-radius-lg",
+    "description": "Dialog, toast"
+  },
+  {
+    "name": "radius/full",
+    "type": "FLOAT",
+    "value": 9999,
+    "cssVar": "--steady-radius-full",
+    "description": "Switch track and thumb, radio"
+  },
+  {
+    "name": "border/width/default",
+    "type": "FLOAT",
+    "value": 1,
+    "cssVar": "--steady-border-width-default",
+    "description": ""
+  },
+  {
+    "name": "border/width/emphasis",
+    "type": "FLOAT",
+    "value": 2,
+    "cssVar": "--steady-border-width-emphasis",
+    "description": ""
+  },
+  {
+    "name": "focus/width",
+    "type": "FLOAT",
+    "value": 2,
+    "cssVar": "--steady-focus-width",
+    "description": ""
+  },
+  {
+    "name": "focus/offset",
+    "type": "FLOAT",
+    "value": 2,
+    "cssVar": "--steady-focus-offset",
+    "description": ""
+  },
+  {
+    "name": "size/control-sm",
+    "type": "FLOAT",
+    "value": 32,
+    "cssVar": "--steady-size-control-sm",
+    "description": ""
+  },
+  {
+    "name": "size/control-md",
+    "type": "FLOAT",
+    "value": 40,
+    "cssVar": "--steady-size-control-md",
+    "description": ""
+  },
+  {
+    "name": "size/control-lg",
+    "type": "FLOAT",
+    "value": 48,
+    "cssVar": "--steady-size-control-lg",
+    "description": ""
+  },
+  {
+    "name": "size/target-min",
+    "type": "FLOAT",
+    "value": 24,
+    "cssVar": "--steady-size-target-min",
+    "description": "WCAG 2.5.8 floor. No interactive target goes below this."
+  },
+  {
+    "name": "size/icon",
+    "type": "FLOAT",
+    "value": 20,
+    "cssVar": "--steady-size-icon",
+    "description": ""
+  },
+  {
+    "name": "motion/duration/fast",
+    "type": "FLOAT",
+    "value": 120,
+    "cssVar": "--steady-motion-duration-fast",
+    "description": ""
+  },
+  {
+    "name": "motion/duration/base",
+    "type": "FLOAT",
+    "value": 200,
+    "cssVar": "--steady-motion-duration-base",
+    "description": ""
+  }
+]

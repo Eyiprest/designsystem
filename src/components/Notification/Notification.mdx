@@ -1,0 +1,68 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as Stories from './Notification.stories';
+
+<Meta of={Stories} />
+
+# Notification: Alert and Toast
+
+One component with two forms. The brief lists "toast/alert" as one component, so Steady treats it as one family: **Alert** stays on the page, **Toast** appears briefly. Both share icons and colours.
+
+<Canvas of={Stories.InfoAlert} />
+<Controls of={Stories.InfoAlert} />
+
+## Purpose
+
+| Form | Use for | Not for |
+|---|---|---|
+| Alert (inline) | Messages that need to stay: errors, warnings, standing notices | Anything that should vanish |
+| Toast | Routine confirmations: "Receipt sent" | Errors, or anything the user must act on |
+
+Errors never use a toast, because it times out. Use `Alert variant="error"`.
+
+## Anatomy
+
+**Alert:** icon (a different shape for each of info, success, warning, error), title, optional body.
+**Toast:** icon, title, optional description, Dismiss button. A region (`ToastHost`) mounted once near the end of the page.
+
+## States
+
+Alert variants: info, success, warning, error. Toast variants: info, success. Toast timeout is at least 5000 ms (`showToast` raises lower values to 5000). The timer pauses while the pointer is over a toast or focus is in the region.
+
+## Keyboard
+
+| Key | Result |
+|---|---|
+| F6 | Moves focus to the notifications region (React Aria). |
+| Tab | In the region, first to the toast, then to its Dismiss button. |
+| Enter, Space on Dismiss | Removes the toast. |
+
+A toast never takes focus on its own. Checked with real key presses: after pressing the trigger, focus stayed on the trigger, F6 reached the region, two Tab presses reached Dismiss, and Enter removed the toast.
+
+## Naming
+
+The region is named "Notifications". The toast's title and description name and describe it. The Dismiss button is named "Dismiss".
+
+## Screen reader
+
+Expected: an error Alert (`role="alert"`) is read at once. Info, success and warning Alerts (`role="status"`) and toasts are read politely at the next pause. A static notice set with `live={false}` has no live role and is read in reading order. **Not yet confirmed with a screen reader.** Some screen readers skip a live region that is added to the page already filled. Prefer the always-present toast region for messages that appear after an action.
+
+## Do and don't
+
+- Do say what happened and what to do next.
+- Do use `live={false}` for a banner that is on the page at load.
+- Don't use a toast for an error or for anything with a button the user must press in time.
+- Don't stack more than three. The queue shows three at once.
+
+## Responsive
+
+Alerts fill their container. The toast region is fixed to the bottom of the viewport, with toasts right-aligned and at most 24rem wide. A fixed element can cover content that has focus. WCAG 2.4.11 (focus not obscured) is not separately tested.
+
+## Reduced motion
+
+Alerts and toasts have no animation.
+
+## Limitations
+
+- React Aria's toast exports are marked `UNSTABLE_`. The API may change in a minor version, so `react-aria-components` is pinned to an exact version.
+- The toast element has role `alertdialog` in React Aria 1.22.1, which is why keyboard users need two Tab presses after F6. This is a library behaviour and I have not changed it.
+- No action buttons inside toasts. No custom position.

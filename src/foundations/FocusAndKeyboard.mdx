@@ -1,0 +1,34 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Foundations/Focus and keyboard" />
+
+# Focus and keyboard
+
+## Focus ring
+
+One style for every focusable element, set once in `src/styles/base.css`: a 2 px outline, 2 px away from the element, in `color/focus/outer`. It shows for keyboard focus (`:focus-visible`), not for mouse clicks. On the dark toast it flips to a light colour so it stays visible.
+
+## Order and traps
+
+- Focus order follows the page. No positive `tabindex` anywhere.
+- The skip link is the first stop.
+- The only focus trap is inside a modal dialog. It comes from React Aria, not from custom code.
+- After a failed form submit, focus moves to the error summary. After a sample order is created, focus moves to the confirmation heading.
+
+## Key map
+
+| Component | Keys |
+|---|---|
+| Button, Switch, Checkbox | Enter or Space (Switch and Checkbox: Space) |
+| Radio group | Tab in once, arrows move and select |
+| Select | Arrows change the value, native |
+| Tabs | Arrows move and select, Home and End |
+| Dialog | Tab loops inside, Escape closes |
+| Toast | F6 to the region, Tab, Enter on Dismiss |
+| Accordion | Enter or Space on each button |
+| Data table | Enter or Space on a sort button |
+| Form | Enter on a summary link moves to its field |
+
+## How it was checked
+
+`scripts/keyboard-checks.mjs` presses real keys in Chromium against each component and writes `docs/test-results/keyboard.json`. Results are in `docs/test-report.md`. No screen reader has been used yet.

@@ -1,0 +1,63 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as Stories from './Tabs.stories';
+
+<Meta of={Stories} />
+
+# Tabs
+
+Switches between panels of related content on one page. Built on React Aria `Tabs`. No custom tab logic.
+
+<Canvas of={Stories.Default} />
+
+## Purpose
+
+Show one of several views of the same thing: "How to pay" and "Bank transfer details". If the panels are steps in a sequence, or lead to other pages, use a different pattern.
+
+## Anatomy
+
+1. Tab list (`TabList`)
+2. Tabs (`Tab`), each with an `id`
+3. Panels (`TabPanel`) with matching `id`
+
+## States
+
+Selected, unselected, focus, disabled. Selected has bold text, `primary/default` colour and a 3 px bar. Tabs that are not selected use secondary text, which passes 4.5:1 (see the contrast report).
+
+## Keyboard
+
+| Key | Result |
+|---|---|
+| Tab | Enters the tab list on the selected tab. Next Tab goes to the panel. |
+| Left, Right arrow | Moves to the previous or next tab and selects it. |
+| Home, End | First or last tab. |
+
+Checked with real key presses. The `ManualActivation` story shows the variant where arrows move focus and Enter or Space selects.
+
+## Naming
+
+Give `TabList` an `aria-label`. Each tab's text is its name. The panel is named by its tab.
+
+## Screen reader
+
+Expected: "Bank transfer, tab, selected, 1 of 3". **Not yet confirmed with a screen reader.**
+
+## Do and don't
+
+- Do keep tab labels to one or two words.
+- Do keep the panel content visible without scrolling inside the tab.
+- Don't hide required form fields in a tab the user might not open.
+- Don't use more than about five tabs.
+
+## Responsive
+
+The tab list wraps onto a second row when it runs out of width, and does not scroll. With long labels at 320 px, use fewer tabs or shorter words. Wrapped rows have not been tested with a screen magnifier.
+
+## Reduced motion
+
+No motion.
+
+## Limitations
+
+- Horizontal orientation only.
+- No scrolling tab list, no closable tabs, no icons.
+- Deep links to a tab (URL hash) are not built in.

@@ -1,0 +1,43 @@
+.steady-tabs { display: flex; flex-direction: column; }
+
+.steady-tablist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--steady-space-2);
+  border-block-end: var(--steady-border-width-default) solid var(--steady-color-border-subtle);
+}
+
+.steady-tab {
+  min-height: var(--steady-size-control-md);
+  display: inline-flex;
+  align-items: center;
+  padding-inline: var(--steady-space-4);
+  /* Selected tab gets a thick bottom bar as well as bold text, so it is not shown by colour alone. */
+  border-block-end: 3px solid transparent;
+  margin-block-end: -1px;
+  font-weight: var(--steady-font-weight-medium);
+  color: var(--steady-color-text-secondary);
+  cursor: pointer;
+  border-radius: var(--steady-radius-md) var(--steady-radius-md) 0 0;
+}
+
+.steady-tab[data-hovered]:not([data-disabled]) { background: var(--steady-color-bg-subtle); color: var(--steady-color-text-primary); }
+
+.steady-tab[data-selected] {
+  color: var(--steady-color-primary-active);
+  font-weight: var(--steady-font-weight-bold);
+  border-block-end-color: var(--steady-color-primary-default);
+}
+
+.steady-tab[data-focus-visible] {
+  outline: var(--steady-focus-width) solid var(--steady-color-focus-outer);
+  outline-offset: calc(var(--steady-focus-offset) * -1);
+}
+
+.steady-tab[data-disabled] { color: var(--steady-color-text-disabled); cursor: not-allowed; }
+
+.steady-tabpanel { padding-block: var(--steady-space-5); }
+.steady-tabpanel[data-focus-visible] {
+  outline: var(--steady-focus-width) solid var(--steady-color-focus-outer);
+  outline-offset: var(--steady-focus-offset);
+}

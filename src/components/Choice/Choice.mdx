@@ -1,0 +1,63 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as Stories from './Choice.stories';
+
+<Meta of={Stories} />
+
+# Checkbox and radio group
+
+One family built on native `input type="checkbox"` and `input type="radio"`, grouped in a `fieldset` with a `legend`.
+
+<Canvas of={Stories.Radios} />
+
+## Purpose
+
+- **Checkbox:** a yes or no answer, or any number of choices from a group.
+- **Radio group:** exactly one choice from a short list that should stay visible.
+
+## Anatomy
+
+1. Group legend (also names the group for assistive technology)
+2. Group hint and error (optional)
+3. Choice: a 24 px indicator, a label and an optional hint. The label is part of the click target.
+
+## States
+
+Unchecked, checked, focus, error, disabled. Checked is shown by a tick (checkbox) or a dot (radio), as well as colour. Error colours the border of unchecked indicators and adds the group error text.
+
+## Keyboard
+
+| Control | Keys |
+|---|---|
+| Checkbox | Tab to focus, Space toggles |
+| Radio group | Tab enters the group once (on the checked radio, or the first). Arrow keys move and select. Tab leaves the group. |
+
+Both checked with real key presses.
+
+## Naming
+
+`RadioGroup` and `CheckboxGroup` take a `legend`. A single `Checkbox` uses its own `label`. Hints and errors are linked with `aria-describedby`.
+
+## Screen reader
+
+Expected for a radio: "Payment method, group. Bank transfer, radio button, 1 of 3, not checked". **Not yet confirmed with a screen reader.**
+
+## Do and don't
+
+- Do write the legend as a question or noun: "Payment method".
+- Do list radios in a sensible order and preselect nothing unless there is a safe default.
+- Don't use a checkbox for an action that takes effect at once. Use Switch.
+- Don't nest groups.
+
+## Responsive
+
+Choices stack vertically. Labels wrap beside the indicator.
+
+## Reduced motion
+
+No animation.
+
+## Limitations
+
+- No indeterminate checkbox state.
+- No card-style or button-style choices.
+- `RadioGroup` needs a `name`. It is also the key `Form` uses for the error message.

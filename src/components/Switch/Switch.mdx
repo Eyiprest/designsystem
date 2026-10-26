@@ -1,0 +1,56 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as Stories from './Switch.stories';
+
+<Meta of={Stories} />
+
+# Switch
+
+An on and off setting that takes effect at once. Built on React Aria `Switch`, which renders a native checkbox input with `role="switch"`.
+
+<Canvas of={Stories.Off} />
+<Controls of={Stories.Off} />
+
+## Purpose
+
+Settings: "Email receipts". If the user has to press Save or Submit before anything happens, use a Checkbox instead.
+
+## Anatomy
+
+1. Track (48 × 28 px, 2 px border)
+2. Thumb (20 px)
+3. Label
+
+## States
+
+Off, on, focus, disabled off, disabled on. On is shown by thumb position and fill, not colour alone.
+
+## Keyboard
+
+Tab to focus. Space toggles. Checked with real key presses.
+
+## Naming
+
+The children are the visible label and the accessible name. Name the setting, not the action: "Email receipts".
+
+## Screen reader
+
+Expected: "Email receipts, switch, off". After Space: "on". **Not yet confirmed with a screen reader.**
+
+## Do and don't
+
+- Do use it for settings that apply straight away.
+- Don't label it "Turn on ...". The state is already announced.
+- Don't use it inside a form whose answers are collected on Submit, except for demonstration controls like the one on the checkout page.
+
+## Responsive
+
+The track keeps its size. The label wraps.
+
+## Reduced motion
+
+The thumb slides over 120 ms. Under reduced motion it moves in a single frame.
+
+## Limitations
+
+- No "loading" or "indeterminate" state.
+- Label sits on the right only.

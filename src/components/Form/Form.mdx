@@ -1,0 +1,64 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as Stories from './Form.stories';
+
+<Meta of={Stories} />
+
+# Form with validation
+
+A native `form` with its own validation, an error summary and live clearing of fixed errors. Turns native browser validation off (`noValidate`) so the wording and the order of errors are yours.
+
+<Canvas of={Stories.FailedSubmit} />
+
+## Purpose
+
+Collect several answers and submit them once. You give `validate(values)` (returns `{ fieldName: message }`) and `onSubmit(values)`.
+
+## Anatomy
+
+1. Error summary (appears after a failed submit): title, then one link per error
+2. Fields (Text input, Select, Checkbox, Radio group). Each picks up its error from the form by `name`.
+3. Submit button. Children can be a function that receives `isSubmitting`.
+
+## States
+
+Initial, submitting, errors shown, valid. Errors appear only after submit. They clear as soon as the field is valid. They never reappear while typing.
+
+## Keyboard
+
+| Step | Result |
+|---|---|
+| Submit with errors | Focus moves to the error summary. |
+| Enter on a summary link | Focus moves to that field. |
+| Fix a field | Focus stays where it is. |
+
+Checked with real key presses and in the "Fix then submit" story. That story caught a bug where focus jumped to the summary on every keystroke (issue 9 in `docs/issue-log.md`).
+
+## Naming
+
+The summary is a `role="group"` named by its title (default "There is a problem"). Each error message is the same words in the summary and beside its field. Use `aria-label` on `Form` to name the form.
+
+## Screen reader
+
+Expected: after a failed submit, "There is a problem, group", then the first link. Fields read their label, "invalid entry" and the error text. **Not yet confirmed with a screen reader.** Pass `onValidationChange` to prefix the page title with "Error:". The checkout page does this.
+
+## Do and don't
+
+- Do write the message as an instruction: "Enter your phone number".
+- Do keep the same message in the summary and next to the field.
+- Don't show errors while the user is still typing the first time.
+- Don't rely on colour. Errors have an icon, text and a thicker border.
+
+## Responsive
+
+Single column at all widths. The summary and fields fill the width. At 320 px nothing scrolls sideways.
+
+## Reduced motion
+
+No motion.
+
+## Limitations
+
+- Validation rules are yours. The library has no schema integration.
+- One summary per form. No multi-step wizard state.
+- Server-side errors are shown with an Alert (see the checkout), not mapped to fields.
+- The error links use `href="#id"` and move focus in code. Behaviour with screen readers is not tested.

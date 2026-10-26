@@ -1,0 +1,68 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as Stories from './Dialog.stories';
+
+<Meta of={Stories} />
+
+# Modal dialog
+
+A window on top of the page that needs a response before the user goes on. Built on React Aria `Modal` and `Dialog`. The library does not implement its own focus trap.
+
+<Canvas of={Stories.Basic} />
+
+## Purpose
+
+- `dialog` for a short task: edit a detail, pick an option.
+- `alertdialog` for a decision that needs an answer, such as discarding an order. It cannot be closed by clicking outside.
+
+If the content is a message with no action, use Alert instead.
+
+## Anatomy
+
+1. Overlay (dims the page)
+2. Panel (up to 32rem wide, at most the viewport tall, scrolls inside if tall)
+3. Title (a heading, and the dialog's accessible name)
+4. Body
+5. Actions (`DialogActions`), right-aligned, primary last
+
+## States
+
+Closed, open. Control it with `isOpen` and `onOpenChange`.
+
+## Keyboard
+
+| Key | Result |
+|---|---|
+| Tab, Shift+Tab | Stay inside the dialog. |
+| Escape | Closes the dialog and returns focus to the button that opened it. |
+
+On open, focus moves into the dialog. The page behind it gets the `inert` attribute, so it cannot be focused or read in browse mode. Checked with real key presses: eight Tab presses never left the dialog, and Escape returned focus to "Open dialog". I confirmed the background is out of Chromium's accessibility tree.
+
+## Naming
+
+`title` is the visible heading and labels the dialog. Keep it short and specific: "Edit contact details".
+
+## Screen reader
+
+Expected: "Edit contact details, dialog", then the first focused control. For `alertdialog` the role is announced as alert dialog. **Not yet confirmed with a screen reader.**
+
+## Do and don't
+
+- Do put the safest action first in `alertdialog` ("Cancel", then "Discard").
+- Do keep dialog content short. Long forms belong on a page.
+- Don't open a dialog on page load.
+- Don't stack dialogs.
+
+## Responsive
+
+Width is the smaller of 32rem and the viewport. Tall content scrolls inside the panel, not the page.
+
+## Reduced motion
+
+The overlay fades in over 200 ms. Under reduced motion the fade is a single frame.
+
+## Limitations
+
+- The Dialog is controlled: you own the open state.
+- Escape also closes an `alertdialog` (React Aria default). If that is wrong for your flow, make "Cancel" the safe path.
+- Nested dialogs are untested.
+- Behaviour with screen readers is not yet tested.

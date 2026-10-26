@@ -1,0 +1,66 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as Stories from './DataTable.stories';
+
+<Meta of={Stories} />
+
+# Data table
+
+A native `table` with a caption, column headers, one row-header column and optional sorting.
+
+<Canvas of={Stories.Sorting} />
+
+## Purpose
+
+Show rows of data the user compares. It is a reading table, not a grid: no editing, no row selection.
+
+## Anatomy
+
+1. Scroll region (focusable, named by the caption)
+2. Caption (visible)
+3. Column headers (`th scope="col"`), sortable ones contain a button
+4. Rows, with one `th scope="row"`
+5. Status line (visually hidden) announcing the new sort
+
+## States
+
+Unsorted, sorted ascending, sorted descending, empty (`emptyMessage`). The sorted column has `aria-sort`. Its button shows an up and a down arrow, and the one for the current direction is drawn at full strength.
+
+## Keyboard
+
+| Key | Result |
+|---|---|
+| Tab | Scroll region (if it can scroll), then each sort button |
+| Enter, Space | Sort by that column. Press again to reverse. |
+| Arrow keys on the focused region | Scroll it |
+
+Focus stays on the sort button after sorting. Checked with real key presses.
+
+## Naming
+
+The caption names the table. Sort buttons are named by their column header. The status line says "Sorted by Amount, ascending."
+
+## Screen reader
+
+Expected: "Items in this sample order, table, 3 columns, 3 rows". On a sorted header: "Item, column header, sorted ascending, button". **Not yet confirmed with a screen reader.**
+
+## Do and don't
+
+- Do give every column a short, plain header.
+- Do right-align numbers (`align: 'end'`).
+- Don't sort silently. The status line is what tells screen reader users.
+- Don't use it for layout.
+
+## Responsive
+
+Row headers wrap and cell padding shrinks below 40rem. If the table is still wider than its container, it scrolls inside the region and the page does not. In the checkout at 320 px the price column is visible without scrolling. That was a defect found in a screenshot (issue 12).
+
+## Reduced motion
+
+No motion.
+
+## Limitations
+
+- No pagination, no filtering, no sticky header, no column resize.
+- Sorting is client-side on the rows you pass in.
+- Wide tables rely on the scroll region. Users who cannot scroll horizontally have an extra step.
+- A table with more than a few hundred rows is untested.

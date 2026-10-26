@@ -1,0 +1,67 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as Stories from './Button.stories';
+
+<Meta of={Stories} />
+
+# Button
+
+A native `button` for actions: submit a form, open a dialog, place an order. If the control goes to another page, use a link instead.
+
+<Canvas of={Stories.Primary} />
+<Controls of={Stories.Primary} />
+
+## Purpose
+
+One action per button, named with a verb: "Place sample order", not "Submit". Use one primary button per view. Use secondary for the other actions and ghost for low-weight actions such as "Cancel".
+
+## Anatomy
+
+1. Container (height 32, 40 or 48 px from `size/control-sm`, `-md`, `-lg`)
+2. Label (bold, 16 px)
+3. Spinner, shown only while loading
+4. Focus ring: 2 px, 2 px away from the container
+
+## States
+
+- **Default, hover, active:** fill changes between `primary/default`, `primary/hover` and `primary/active`. Secondary changes background and keeps its border.
+- **Focus:** the ring, shown for keyboard focus only (`:focus-visible`).
+- **Disabled:** native `disabled`. The button leaves the tab order. Use it sparingly. A disabled button hides why it is disabled, so prefer an error message after submit.
+- **Loading:** `isLoading` sets `aria-disabled`, not `disabled`. Focus stays on the button, clicks are ignored, and the label becomes `loadingLabel`.
+
+## Keyboard
+
+| Key | Result |
+|---|---|
+| Tab | Moves to the button. A disabled button is skipped. |
+| Enter, Space | Activates it. |
+
+Checked with real key presses in `scripts/keyboard-checks.mjs`.
+
+## Naming
+
+The visible text is the accessible name. Icon-only buttons are not part of this component. If you add one, give it `aria-label` and keep the same word as the tooltip.
+
+## Screen reader
+
+Expected: "Place order, button". While loading: "Placing order, button, dimmed" (the exact wording depends on the screen reader). **Not yet confirmed with NVDA, JAWS or VoiceOver.** See `docs/test-report.md`.
+
+## Do and don't
+
+- Do use a verb and the object: "Save address".
+- Do keep the button focusable while loading so keyboard users do not lose their place.
+- Don't use `disabled` to say "form incomplete". Show errors after submit.
+- Don't put two primary buttons side by side.
+
+## Responsive
+
+The label wraps only if the container is narrower than the text. The minimum height stays at 32 px or more, above the 24 px WCAG 2.5.8 target floor. In the checkout at 320 px the submit button is full-width of its column.
+
+## Reduced motion
+
+The motion is a 120 ms colour change and the loading spinner (a 0.8 s rotation). Under `prefers-reduced-motion: reduce`, `base.css` cuts all transitions and animations to 0.01 ms. The longest duration measured on the checkout page in that mode is 0.01 ms.
+
+## Limitations
+
+- No icon slot or icon-only variant.
+- No toggle-button (`aria-pressed`) variant. Use Switch for on and off settings.
+- The spinner is decorative. Only the label text announces loading.

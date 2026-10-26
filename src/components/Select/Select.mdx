@@ -1,0 +1,56 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as Stories from './Select.stories';
+
+<Meta of={Stories} />
+
+# Select
+
+A native `select`. The browser draws the list, so touch devices get their own picker and keyboards work without extra code.
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+## Purpose
+
+Choose one option from a list of about 5 to 15. For fewer than five, use radios. For long lists that need search, this component is not enough (see Limitations).
+
+## Anatomy
+
+Same as Text input, with a chevron at the end of the control. The chevron is a decorative background image.
+
+## States
+
+Default, hover, focus, error, disabled. An optional empty first option (`placeholder`) shows "Choose your bank" until a value is picked.
+
+## Keyboard
+
+Native. Focus with Tab. Arrow keys change the value (closed). Alt+Down or Space opens the list in most browsers, and typing a letter jumps to a matching option. Arrow-key change was checked with real key presses in Chromium.
+
+## Naming
+
+Label, hint and error are linked as in Text input. Options use their `label` text.
+
+## Screen reader
+
+Expected: "Your bank, combo box, Harbour, collapsed" (role name differs by screen reader). **Not yet confirmed.**
+
+## Do and don't
+
+- Do keep option text short and unique.
+- Do add a placeholder option when no default makes sense, and validate that the user left it.
+- Don't use a select to run an action when the value changes.
+- Don't use a select for two options. Use a radio group.
+
+## Responsive
+
+Fills its container. The open list is drawn by the operating system.
+
+## Reduced motion
+
+The control has no animation.
+
+## Limitations
+
+- Native styling stops at the closed control. The open list looks like the browser's.
+- No grouping (`optgroup`), no multiple selection, no search or type-ahead beyond what the browser provides.
+- axe cannot read the select's background colour because of the chevron image. Text colour and background were checked by hand (about 16.5:1). See `docs/test-report.md`.

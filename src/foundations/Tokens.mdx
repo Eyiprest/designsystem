@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Foundations/Tokens" />
+
+# Tokens
+
+The source of truth is `tokens/tokens.json`. `npm run tokens` writes three things from it: CSS custom properties (`--steady-*`), a Figma variables file, and a contrast report. The build fails if any listed colour pair is below its target ratio.
+
+## Colour
+
+| Group | Tokens | Notes |
+|---|---|---|
+| Background | `bg/canvas` #FBFAF7, `bg/surface` #FFFFFF, `bg/subtle` #F1EFE8, `bg/inverse` #1D1C19 | Surface for inputs and dialogs. Inverse for toasts. |
+| Text | `text/primary` #1D1C19, `secondary` #57544C, `on-primary`, `on-inverse`, `disabled` | Disabled text is exempt from WCAG 1.4.3 but still readable. |
+| Border | `default` #7D796D, `subtle` #DAD6CB, `disabled` | `default` reaches 3:1 for control boundaries (1.4.11). `subtle` is for dividers only. |
+| Primary | `default` #0B6B70, `hover`, `active`, `subtle` | |
+| Focus | `inner` #FFFFFF, `outer` #1D1C19 | |
+| Status | `error`, `success`, `warning` with `default` and `subtle` | Always paired with an icon shape and text. |
+
+All 29 pairs in the report pass. Run `npm run tokens` to see the ratios.
+
+## Typography
+
+Atkinson Hyperlegible Next (body) and Atkinson Hyperlegible Mono, both under the SIL Open Font License. Sizes: 12, 14, 16, 20, 24, 32 px. Weights: 400, 500, 700. Line heights: 1.25 and 1.5.
+
+## Spacing, radius, border, focus, size
+
+- Space: 0, 2, 4, 8, 12, 16, 24, 32, 48, 64 px (`space/0` to `space/9`)
+- Radius: 0, 2, 4, 8 px and full
+- Border width: 1 px and 2 px
+- Focus ring: 2 px wide, 2 px offset
+- Control height: 32, 40, 48 px. Minimum target 24 px.
+- Motion: 120 ms and 200 ms
+
+## Where to find them
+
+CSS: `src/tokens/tokens.css`. Figma: the Variables in the Steady file (five collections, 64 variables). Names map one to one: Figma `color/primary/default` is CSS `--steady-color-primary-default`.

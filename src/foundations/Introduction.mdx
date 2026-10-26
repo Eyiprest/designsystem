@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Introduction" />
+
+# Steady
+
+Steady is a small React and TypeScript component library with 12 components. It is a portfolio project that shows how I build, test and document accessible interface parts. It is not a product and has no users yet.
+
+The checkout page in this project is **a demonstration**. It is built from these components only. It takes no payment, sends nothing, and every shop, bank, account number and USSD code on it is made up.
+
+## What you will find here
+
+- **Components**: each page covers purpose, anatomy, states, keyboard, naming, screen reader notes, do and don't, responsive, reduced motion and limitations.
+- **Foundations**: tokens, contrast, focus and keyboard rules.
+- **Patterns**: the checkout demo, with stories for each payment method and for error states.
+
+## What has been tested, and what has not
+
+| Layer | Status |
+|---|---|
+| axe-core rules in every story, in Chromium | Run |
+| Real keyboard presses in Chromium | Run |
+| Page scans at 1280, 640 and 320 px | Run |
+| Screen readers (NVDA, VoiceOver and others) | **Not tested yet** |
+| Firefox, Safari | **Not tested yet** |
+| Forced colours, browser zoom control | **Not tested yet** |
+| Testing with disabled users | **Not done** |
+
+The components were tested against relevant WCAG 2.2 AA criteria. That is not a claim of full conformance. Automated tools find only part of the problems. See `docs/test-report.md` and `docs/issue-log.md` in the repository.
+
+## Choices that apply everywhere
+
+1. Native HTML first: `button`, `input`, `select`, `table`, `form`. ARIA only where HTML has no element.
+2. React Aria Components for four behaviours that are hard to get right by hand: dialog focus handling, tabs, switch, and toast.
+3. One focus ring everywhere: 2 px, 2 px gap.
+4. Error and state are never colour alone.
+5. Every token pair is contrast-checked at build time.

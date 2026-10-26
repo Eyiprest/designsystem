@@ -1,0 +1,58 @@
+import { Meta, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as Stories from './TextInput.stories';
+
+<Meta of={Stories} />
+
+# Text input
+
+A native `input` with a visible label, optional hint and an error message. Supports `type` text, email, tel, password and so on.
+
+<Canvas of={Stories.Default} />
+<Controls of={Stories.Default} />
+
+## Purpose
+
+Collect one short piece of text. The label is always visible above the field. A placeholder is never the label.
+
+## Anatomy
+
+1. Label, with a "required" mark when `required` is set
+2. Hint (optional), above the field so it is read before typing
+3. Error message (optional), with an icon, above the field
+4. Control (height 40 px, 1 px border, `color/border/default`)
+
+## States
+
+Default, hover, focus, error, disabled. Error uses a 2 px border in `color/error/default`, an icon and text. The border colour passes 3:1 on the surface (see `docs/contrast-report.md`). Inside a `Form`, the error for the field's `name` is picked up automatically.
+
+## Keyboard
+
+Tab to focus, type to enter text. Nothing custom.
+
+## Naming
+
+`label` becomes the accessible name through `label for`. Hint and error are linked with `aria-describedby`. An error also sets `aria-invalid="true"`.
+
+## Screen reader
+
+Expected: "Email address, edit text, invalid entry, Enter an email address in the correct format". The order of hint and error text varies by screen reader. **Not yet confirmed with a screen reader.**
+
+## Do and don't
+
+- Do set `autoComplete` for names, emails and phone numbers (WCAG 1.3.5).
+- Do write errors that say what to do: "Enter your email address".
+- Don't use `placeholder` for instructions. It disappears while typing and has low contrast by default.
+- Don't validate on every keystroke. `Form` shows errors after submit and clears them as the user fixes them.
+
+## Responsive
+
+The field fills its container. Input text is 16 px, which keeps iOS Safari from zooming in on focus (not tested on a device).
+
+## Reduced motion
+
+The field has no animation.
+
+## Limitations
+
+- No prefix or suffix slot, no character counter, no multi-line variant.
+- `required` shows a mark and sets the native attribute. Native browser validation is turned off inside `Form` (`noValidate`), so wording comes from your `validate` function.

@@ -1,0 +1,122 @@
+[
+  {
+    "component": "Button",
+    "test": "Enter and Space activate; disabled button is skipped",
+    "method": "Playwright real key events",
+    "expected": "Two activations, Tab skips disabled",
+    "actual": "OK count=2, focus after Tab=button|After disabled",
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, Linux",
+    "date": "2026-10-26"
+  },
+  {
+    "component": "Radio group",
+    "test": "Group is one tab stop; arrows move and select",
+    "method": "Playwright real key events",
+    "expected": "Tab enters once, arrows select, Tab leaves",
+    "actual": "OK first=radio, checked=ussd, then focus=button|After",
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, Linux",
+    "date": "2026-10-26"
+  },
+  {
+    "component": "Checkbox",
+    "test": "Space toggles",
+    "method": "Playwright real key events",
+    "expected": "Checked after Space, unchecked after second Space",
+    "actual": "OK after first=true, after second=false",
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, Linux",
+    "date": "2026-10-26"
+  },
+  {
+    "component": "Switch",
+    "test": "Space toggles; state exposed",
+    "method": "Playwright real key events",
+    "expected": "aria-checked or checked flips",
+    "actual": "OK after first=true, after second=false",
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, Linux",
+    "date": "2026-10-26"
+  },
+  {
+    "component": "Select",
+    "test": "Native select: arrow keys change value",
+    "method": "Playwright real key events",
+    "expected": "Value changes without a mouse",
+    "actual": "OK value=harbour",
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, Linux",
+    "date": "2026-10-26"
+  },
+  {
+    "component": "Modal dialog",
+    "test": "Opens, traps Tab, Escape closes, focus returns to trigger",
+    "method": "Playwright real key events",
+    "expected": "Focus stays inside; Escape closes; focus back on Open dialog",
+    "actual": "OK eight Tabs stayed in, after Escape focus=button|Open dialog",
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, Linux",
+    "date": "2026-10-26"
+  },
+  {
+    "component": "Tabs",
+    "test": "Arrow keys move and select; Tab goes to panel; Home/End",
+    "method": "Playwright real key events",
+    "expected": "Roving tabindex",
+    "actual": "OK ArrowRight=USSD, End=Cash, Home=Bank, Tab then focus=A",
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, Linux",
+    "date": "2026-10-26"
+  },
+  {
+    "component": "Toast",
+    "test": "Toast appears without taking focus; F6 reaches it; Enter dismisses",
+    "method": "Playwright real key events",
+    "expected": "Focus stays on trigger; dismiss works",
+    "actual": "OK focus after show=button|Send receipt, F6 into region=true, second Tab lands on aria-label=Dismiss, Enter removed the toast",
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, Linux",
+    "date": "2026-10-26"
+  },
+  {
+    "component": "Form",
+    "test": "Failed submit focuses summary; summary link focuses field; fixing does not steal focus",
+    "method": "Playwright real key events",
+    "expected": "Summary focused, link goes to field, typing keeps focus",
+    "actual": "OK summary focused=true, link->field=true, typed=\"Ada Lovelace\", still in input=true",
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, Linux",
+    "date": "2026-10-26"
+  },
+  {
+    "component": "Data table",
+    "test": "Sort button toggles aria-sort and reorders rows",
+    "method": "Playwright real key events",
+    "expected": "ascending, descending, no focus loss",
+    "actual": "OK aria-sort ascending then descending; focus kept on button|Item",
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, Linux",
+    "date": "2026-10-26"
+  },
+  {
+    "component": "Navigation menu",
+    "test": "Skip link: first Tab stop, Enter moves focus to main",
+    "method": "Playwright real key events",
+    "expected": "Real navigation lands focus in main",
+    "actual": "OK first stop=a|Skip to main content, focus in main=true, hash=#main",
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, Linux",
+    "date": "2026-10-26"
+  },
+  {
+    "component": "Accordion",
+    "test": "Enter/Space expand and collapse; aria-expanded tracks",
+    "method": "Playwright real key events",
+    "expected": "Expanded flips; focus stays",
+    "actual": "OK after Enter=true, after Space=false",
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, Linux",
+    "date": "2026-10-26"
+  }
+]

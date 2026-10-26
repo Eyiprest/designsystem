@@ -1,0 +1,57 @@
+.steady-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--steady-space-4);
+  min-height: var(--steady-size-control-md);
+  cursor: pointer;
+}
+
+.steady-switch__track {
+  flex: none;
+  position: relative;
+  width: 44px;
+  height: var(--steady-size-target-min);
+  background: var(--steady-color-bg-surface);
+  border: var(--steady-border-width-emphasis) solid var(--steady-color-border-default);
+  border-radius: var(--steady-radius-full);
+  transition: background-color var(--steady-motion-duration-fast), border-color var(--steady-motion-duration-fast);
+}
+
+.steady-switch__thumb {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 3px;
+  width: 14px;
+  height: 14px;
+  margin-block-start: -7px;
+  background: var(--steady-color-border-default);
+  border-radius: var(--steady-radius-full);
+  transition: transform var(--steady-motion-duration-fast), background-color var(--steady-motion-duration-fast);
+}
+
+.steady-switch[data-hovered]:not([data-disabled]) .steady-switch__track { border-color: var(--steady-color-text-secondary); }
+
+.steady-switch[data-selected] .steady-switch__track {
+  background: var(--steady-color-primary-default);
+  border-color: var(--steady-color-primary-default);
+}
+/* On = thumb moves to the other end as well as changing colour. */
+.steady-switch[data-selected] .steady-switch__thumb {
+  transform: translateX(20px);
+  background: var(--steady-color-text-on-primary);
+}
+:dir(rtl) .steady-switch[data-selected] .steady-switch__thumb { transform: translateX(-20px); }
+
+/* React Aria hides the real input and puts focus state on the label element. */
+.steady-switch[data-focus-visible] {
+  outline: var(--steady-focus-width) solid var(--steady-color-focus-outer);
+  outline-offset: var(--steady-focus-offset);
+  border-radius: var(--steady-radius-md);
+}
+
+.steady-switch[data-disabled] { cursor: not-allowed; color: var(--steady-color-text-disabled); }
+.steady-switch[data-disabled] .steady-switch__track {
+  background: var(--steady-color-disabled-bg);
+  border-color: var(--steady-color-border-disabled);
+}
+.steady-switch[data-disabled] .steady-switch__thumb { background: var(--steady-color-border-disabled); }

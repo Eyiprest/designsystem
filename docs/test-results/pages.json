@@ -1,0 +1,163 @@
+[
+  {
+    "state": "Checkout, initial",
+    "width": 1280,
+    "note": "100%",
+    "axeRulesPassed": 48,
+    "violations": [],
+    "incomplete": [],
+    "pageOverflowPx": 0,
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, axe-core 4.14.0",
+    "date": "2026-10-26"
+  },
+  {
+    "state": "Checkout, validation errors shown",
+    "width": 1280,
+    "note": "100%",
+    "axeRulesPassed": 48,
+    "violations": [],
+    "incomplete": [],
+    "pageOverflowPx": 0,
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, axe-core 4.14.0",
+    "date": "2026-10-26"
+  },
+  {
+    "state": "Checkout, bank transfer chosen",
+    "width": 1280,
+    "note": "100%",
+    "axeRulesPassed": 49,
+    "violations": [],
+    "incomplete": [
+      "color-contrast"
+    ],
+    "pageOverflowPx": 0,
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, axe-core 4.14.0",
+    "date": "2026-10-26"
+  },
+  {
+    "state": "Confirmation view",
+    "width": 1280,
+    "note": "100%",
+    "axeRulesPassed": 49,
+    "violations": [],
+    "incomplete": [],
+    "pageOverflowPx": 0,
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, axe-core 4.14.0",
+    "date": "2026-10-26"
+  },
+  {
+    "state": "Checkout, initial",
+    "width": 640,
+    "note": "stands in for 200% zoom",
+    "axeRulesPassed": 48,
+    "violations": [],
+    "incomplete": [],
+    "pageOverflowPx": 0,
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, axe-core 4.14.0",
+    "date": "2026-10-26"
+  },
+  {
+    "state": "Checkout, validation errors shown",
+    "width": 640,
+    "note": "stands in for 200% zoom",
+    "axeRulesPassed": 48,
+    "violations": [],
+    "incomplete": [],
+    "pageOverflowPx": 0,
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, axe-core 4.14.0",
+    "date": "2026-10-26"
+  },
+  {
+    "state": "Checkout, bank transfer chosen",
+    "width": 640,
+    "note": "stands in for 200% zoom",
+    "axeRulesPassed": 49,
+    "violations": [],
+    "incomplete": [
+      "color-contrast"
+    ],
+    "pageOverflowPx": 0,
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, axe-core 4.14.0",
+    "date": "2026-10-26"
+  },
+  {
+    "state": "Confirmation view",
+    "width": 640,
+    "note": "stands in for 200% zoom",
+    "axeRulesPassed": 49,
+    "violations": [],
+    "incomplete": [],
+    "pageOverflowPx": 0,
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, axe-core 4.14.0",
+    "date": "2026-10-26"
+  },
+  {
+    "state": "Checkout, initial",
+    "width": 320,
+    "note": "stands in for 400% zoom (reflow)",
+    "axeRulesPassed": 48,
+    "violations": [],
+    "incomplete": [],
+    "pageOverflowPx": 0,
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, axe-core 4.14.0",
+    "date": "2026-10-26"
+  },
+  {
+    "state": "Checkout, validation errors shown",
+    "width": 320,
+    "note": "stands in for 400% zoom (reflow)",
+    "axeRulesPassed": 48,
+    "violations": [],
+    "incomplete": [],
+    "pageOverflowPx": 0,
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, axe-core 4.14.0",
+    "date": "2026-10-26"
+  },
+  {
+    "state": "Checkout, bank transfer chosen",
+    "width": 320,
+    "note": "stands in for 400% zoom (reflow)",
+    "axeRulesPassed": 49,
+    "violations": [],
+    "incomplete": [
+      "color-contrast"
+    ],
+    "pageOverflowPx": 0,
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, axe-core 4.14.0",
+    "date": "2026-10-26"
+  },
+  {
+    "state": "Confirmation view",
+    "width": 320,
+    "note": "stands in for 400% zoom (reflow)",
+    "axeRulesPassed": 49,
+    "violations": [],
+    "incomplete": [
+      "color-contrast"
+    ],
+    "pageOverflowPx": 0,
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12, axe-core 4.14.0",
+    "date": "2026-10-26"
+  },
+  {
+    "state": "prefers-reduced-motion: reduce",
+    "width": 1280,
+    "note": "longest computed transition or animation duration in ms",
+    "measuredMs": 0.01,
+    "result": "Pass",
+    "environment": "Chromium 153.0.8010.12",
+    "date": "2026-10-26"
+  }
+]

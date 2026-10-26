@@ -1,0 +1,63 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as Stories from './NavigationMenu.stories';
+
+<Meta of={Stories} />
+
+# Navigation menu
+
+A list of links inside a `nav` landmark, plus a skip link. It is not an application menu: there is no `role="menu"`, no arrow-key handling and no popup.
+
+<Canvas of={Stories.WithSkipLink} />
+
+## Purpose
+
+Move between pages or between sections of a page. The browser's own link behaviour does the work, which keeps it predictable for keyboard and screen reader users.
+
+## Anatomy
+
+1. `nav` landmark with a label
+2. List of links. The current one has `aria-current="page"`, bold text, `primary` colour and a 3 px bar.
+3. `SkipLink`: the first tab stop on the page. It is hidden until focused.
+
+## States
+
+Default, hover, focus, current. Current is not shown by colour alone.
+
+## Keyboard
+
+| Key | Result |
+|---|---|
+| Tab | First stop is the skip link. Then each link in order. |
+| Enter on the skip link | Moves focus to the element it points at (the `main` element, which needs `tabIndex={-1}`). |
+| Enter on a link | Follows it. |
+
+Skip link activation was checked with real navigation in `scripts/keyboard-checks.mjs`: after Enter, focus was inside `main` and the URL hash was `#main`. The Storybook test runner cannot run this step (issue 7 in `docs/issue-log.md`).
+
+## Naming
+
+`label` names the landmark ("Main", "On this page"). Use distinct labels when a page has more than one nav. Link text is the accessible name.
+
+## Screen reader
+
+Expected: "Main, navigation. List, 3 items. Payment, link, current page". **Not yet confirmed with a screen reader.**
+
+## Do and don't
+
+- Do put the skip link before everything else, even before the header.
+- Do keep link text the same as the page title it leads to.
+- Don't add `role="menu"` or `aria-haspopup`. They change keyboard behaviour that this component does not implement.
+- Don't nest dropdowns here. Nested menus are not part of this component.
+
+## Responsive
+
+Links wrap onto more rows when they run out of width. There is no hamburger menu. The checkout page at 320 px showed no horizontal scrolling.
+
+## Reduced motion
+
+No motion.
+
+## Limitations
+
+- No dropdowns, mega menus or mobile collapse.
+- No active-link detection from the router. You set `current`.
+- Skip link target must be focusable (`tabIndex={-1}`).

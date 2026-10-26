@@ -1,0 +1,60 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--steady-color-bg-canvas);
+  color: var(--steady-color-text-primary);
+  font-family: var(--steady-font-family-sans);
+  font-size: var(--steady-font-size-md);
+  line-height: var(--steady-font-line-height-normal);
+}
+
+h1, h2, h3, h4, p { margin: 0; }
+h1, h2, h3, h4 { line-height: var(--steady-font-line-height-tight); }
+
+button, input, select, textarea { font: inherit; color: inherit; }
+
+code, kbd, samp { font-family: var(--steady-font-family-mono); font-size: 0.9em; }
+
+a { color: var(--steady-color-primary-default); text-underline-offset: 0.2em; }
+a:hover { color: var(--steady-color-primary-hover); }
+
+/* One focus style for every interactive element. Outline is used (not box-shadow)
+   so it survives overflow clipping and shows in Windows forced-colors mode. */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible,
+:where([role='tab'], [role='switch'], [role='option']):focus-visible {
+  outline: var(--steady-focus-width) solid var(--steady-focus-ring-color, var(--steady-color-focus-outer));
+  outline-offset: var(--steady-focus-offset);
+}
+
+/* Visually hidden, still read by screen readers. */
+.steady-vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

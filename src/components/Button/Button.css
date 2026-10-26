@@ -1,0 +1,63 @@
+.steady-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--steady-space-3);
+  min-width: var(--steady-size-control-md);
+  padding-inline: var(--steady-space-5);
+  border: var(--steady-border-width-default) solid transparent;
+  border-radius: var(--steady-radius-md);
+  font-weight: var(--steady-font-weight-medium);
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color var(--steady-motion-duration-fast), border-color var(--steady-motion-duration-fast);
+}
+
+.steady-button--sm { min-height: var(--steady-size-control-sm); padding-inline: var(--steady-space-4); font-size: var(--steady-font-size-sm); }
+.steady-button--md { min-height: var(--steady-size-control-md); }
+.steady-button--lg { min-height: var(--steady-size-control-lg); padding-inline: var(--steady-space-6); font-size: var(--steady-font-size-lg); }
+
+.steady-button--primary {
+  background: var(--steady-color-primary-default);
+  color: var(--steady-color-text-on-primary);
+}
+.steady-button--primary:hover { background: var(--steady-color-primary-hover); }
+.steady-button--primary:active { background: var(--steady-color-primary-active); }
+
+.steady-button--secondary {
+  background: var(--steady-color-bg-surface);
+  border-color: var(--steady-color-border-default);
+  color: var(--steady-color-primary-default);
+}
+.steady-button--secondary:hover { background: var(--steady-color-primary-subtle); color: var(--steady-color-primary-active); }
+.steady-button--secondary:active { background: var(--steady-color-primary-subtle); border-color: var(--steady-color-primary-active); }
+
+.steady-button--ghost {
+  background: transparent;
+  color: var(--steady-color-primary-default);
+}
+.steady-button--ghost:hover { background: var(--steady-color-primary-subtle); color: var(--steady-color-primary-active); }
+
+.steady-button:disabled {
+  background: var(--steady-color-disabled-bg);
+  border-color: var(--steady-color-border-disabled);
+  color: var(--steady-color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* Loading keeps the normal colours so the button does not look broken, and shows a wait cursor. */
+.steady-button[data-loading] { cursor: progress; }
+
+.steady-button__spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-inline-end-color: transparent;
+  border-radius: var(--steady-radius-full);
+  animation: steady-spin 0.8s linear infinite;
+}
+
+@keyframes steady-spin { to { transform: rotate(360deg); } }
+
+/* Reduced motion: the base stylesheet shortens the animation to a single frame,
+   which leaves a static partial ring. The label still says the button is working. */

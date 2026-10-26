@@ -1,0 +1,62 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import * as Stories from './Accordion.stories';
+
+<Meta of={Stories} />
+
+# Accordion
+
+Headings that open and close a panel of content. Each title is a `button` inside a heading, with `aria-expanded` and `aria-controls`.
+
+<Canvas of={Stories.Default} />
+
+## Purpose
+
+Hide secondary content, such as questions and answers, so the page is shorter. Do not hide content the user needs to finish the task.
+
+## Anatomy
+
+1. Item: a heading (level set by `headingLevel`, default 3) containing a button
+2. Chevron (decorative; points down when closed, up when open)
+3. Panel, hidden with the `hidden` attribute when closed
+
+## States
+
+Collapsed, expanded, focus. By default opening one item closes the others. `allowMultiple` keeps several open. `defaultOpen` lists the ids open on first render.
+
+## Keyboard
+
+| Key | Result |
+|---|---|
+| Tab | Moves between item buttons. |
+| Enter, Space | Opens or closes the item. |
+
+Arrow keys do nothing: this is the simple disclosure pattern, so each button is a normal tab stop. Checked with real key presses; `aria-expanded` flipped on Enter and again on Space.
+
+## Naming
+
+The title text is the button's name. Pick `headingLevel` to fit the page outline. The checkout's help section uses 3 under an h2.
+
+## Screen reader
+
+Expected: "Is any of this real?, button, collapsed", with the heading level announced. **Not yet confirmed with a screen reader.**
+
+## Do and don't
+
+- Do write titles as the question or topic.
+- Do pass the right `headingLevel`. Skipped levels fail axe's `heading-order`.
+- Don't put interactive controls in a closed panel the user must find to proceed.
+- Don't use it for navigation. Use Navigation menu.
+
+## Responsive
+
+Items fill the container and titles wrap. The button height is at least 48 px.
+
+## Reduced motion
+
+The chevron turns over 120 ms. Under reduced motion it is a single frame. The panel opens with no animation.
+
+## Limitations
+
+- No animated height.
+- Panels use `hidden`, so closed content is not searchable with find-in-page in all browsers.
+- `id` values must be unique and stable. They build the ids that link the button and panel.
