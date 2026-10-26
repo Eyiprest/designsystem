@@ -15,9 +15,9 @@ Steady is a small component library I designed and built end to end: tokens, 12 
 
 ## Links to fill in once each exists
 
-- Live Storybook: [Netlify URL, not yet deployed]
-- Checkout demonstration: [Netlify URL]/checkout/ (labelled as a demonstration on the page)
-- GitHub: [repository URL, not yet created]
+- Live Storybook: https://eyidesignsystems.netlify.app/ (the address answers; the page is built by script, so I could only read its title from here)
+- Checkout demonstration: https://eyidesignsystems.netlify.app/checkout/ (not fetched from here; the same files load correctly from a local static server)
+- GitHub: https://github.com/Eyiprest/designsystem
 - Figma file: https://www.figma.com/design/smxbU8i74XsPL5JJ7p8SvM/Untitled (check the file's sharing setting and name before you link it)
 - Case study: `docs/case-study.md`
 

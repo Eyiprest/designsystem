@@ -21,7 +21,7 @@ Statuses: Not started / In progress / Blocked / Needs testing / Complete. Update
 | 15 | Case study | Complete (draft) | `docs/case-study.md` | None | Update after manual tests and sessions |
 | 16 | Portfolio entry | Blocked | `docs/portfolio-entry.md` | Needs your approval and site access | You: approve text and say where it goes |
 | 17 | README, licence, contributing, known issues | Complete | Files at repo root and `docs/known-issues.md` | None | None |
-| 18 | GitHub repository | Blocked | Local git repository only | Needs your GitHub authorisation | You: create or authorise (see handoff) |
-| 19 | Netlify deployment | Blocked | `netlify.toml`; `npm run build:site` builds and serves locally | Needs your Netlify authorisation and a repository | You: connect after GitHub |
+| 18 | GitHub repository | Complete | https://github.com/Eyiprest/designsystem, commit aad6a74 matches local | None | Check it is set to Public |
+| 19 | Netlify deployment | Needs testing | https://eyidesignsystems.netlify.app/ answers with a Storybook page title | I could not load the checkout page or see the rendered Storybook from here | You: open both pages and tick the checklist I sent |
 | 20 | Interview points and CV bullets | Complete | `docs/interview-talking-points.md`, `docs/cv-bullets.md` | None | None |
 | 21 | Three-persona quality review | Complete | `docs/quality-review.md` | None | None |

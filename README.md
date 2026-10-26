@@ -4,6 +4,8 @@ A small React and TypeScript component library with 12 accessible components, a 
 
 **Status: portfolio project, version 0.1, not published to npm.** Built by Eyituoyor Prest. Tested against relevant WCAG 2.2 AA criteria with automated tools and keyboard checks. **Not yet tested with screen readers or with disabled users.** See [Known issues](docs/known-issues.md).
 
+Live Storybook: https://eyidesignsystems.netlify.app/ · Checkout demonstration: https://eyidesignsystems.netlify.app/checkout/
+
 > The checkout page is **a demonstration**. It takes no payment and sends nothing. The shop, bank, account number, USSD code and pickup points are made up.
 
 ## The 12 components
