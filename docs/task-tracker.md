@@ -14,7 +14,7 @@ Statuses: Not started / In progress / Blocked / Needs testing / Complete. Update
 | 8 | Automated a11y tests | Complete | `docs/test-report.md`, `docs/test-results/` | Chromium only | None |
 | 9 | Keyboard checks | Complete | `scripts/keyboard-checks.mjs`, 12 of 12 | None | None |
 | 10 | 320 px and zoom checks | Needs testing | 640 px and 320 px viewport scans pass | Browser zoom control not used | You: check at 200% in Chrome |
-| 11 | Screen reader testing | In progress | Two NVDA + Edge results recorded in `docs/test-results/manual-nvda.md` | Speech Viewer would not open; tester could not recall later results | You: optional. Repeat the form-error and payment-method checks when convenient |
+| 11 | Screen reader testing | In progress | Three NVDA + Edge results recorded in `docs/test-results/manual-nvda.md` | Speech Viewer would not open; tester could not recall later results | You: optional. Repeat the form-error and payment-method checks when convenient |
 | 12 | Test report | Complete | `docs/test-report.md` generated from raw results | None | Update after manual tests |
 | 13 | User research kit | Complete | `research/` | None | You: pick incentive, recruit, run sessions |
 | 14 | User sessions | Not started | None | Needs participants and consent | You |

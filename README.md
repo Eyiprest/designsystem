@@ -2,7 +2,7 @@
 
 A small React and TypeScript component library with 12 accessible components, a documented token set, and a checkout demonstration built only from those components.
 
-**Status: portfolio project, version 0.1, not published to npm.** Built by Eyituoyor Prest. Tested against relevant WCAG 2.2 AA criteria with automated tools and keyboard checks. **Screen reader testing is minimal (two NVDA checks) and there has been no testing with disabled users.** See [Known issues](docs/known-issues.md).
+**Status: portfolio project, version 0.1, not published to npm.** Built by Eyituoyor Prest. Tested against relevant WCAG 2.2 AA criteria with automated tools and keyboard checks. **Screen reader testing is minimal (three NVDA checks) and there has been no testing with disabled users.** See [Known issues](docs/known-issues.md).
 
 Live Storybook: https://eyidesignsystems.netlify.app/ · Checkout demonstration: https://eyidesignsystems.netlify.app/checkout/
 
