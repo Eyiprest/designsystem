@@ -45,3 +45,9 @@ The real-input keyboard run found no component defects. It found one mistake in 
 | # | Where | What I expected | What happened | Fault in | Fix | Result after fix |
 |---|-------|-----------------|---------------|----------|-----|------------------|
 | 16 | Toast keyboard check | F6 reaches the notifications region, one Tab reaches Dismiss. | Timed out waiting for the toast to go. Traced focus by hand: F6 lands on the region, the first Tab lands on the toast itself (React Aria gives it `role="alertdialog"`), and the second Tab lands on Dismiss. My check pressed Enter on the toast, which does nothing. | **Test** | Check now presses Tab twice and asserts the focused element is Dismiss. | Pass. Worth knowing for the docs: keyboard users need two Tab presses after F6. |
+
+## Found by looking at the published Storybook
+
+| # | Where | What I expected | What happened | Fault in | Fix | Result after fix |
+|---|-------|-----------------|---------------|----------|-----|------------------|
+| 17 | Every MDX docs page with a table (12 files) | Markdown tables render as tables. | Tables showed as raw `\|---\|` text. Storybook's MDX compiler does not read GitHub-style tables by default. The page-scan and axe checks did not catch it because the text is valid HTML. Found while taking screenshots of the live site for the portfolio. | **Tooling** | Added `remark-gfm` 4.0.1 to the docs addon in `.storybook/main.ts`. Also updated the Introduction's test table, which still said screen readers were "not tested yet" after the three NVDA checks. | All 15 docs pages render tables, and none contain raw pipe text (checked with a script against the rebuilt site). |
